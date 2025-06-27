@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="gu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Asadhi Beej - Kutchi New Year | Jay Dholi</title>
+    <title>કચ્છનું નવું વર્ષ - આષાઢી બીજ | Jay Dholi</title>
     <style>
         /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Noto Sans Gujarati', sans-serif;
         }
         
         body {
@@ -22,38 +22,66 @@
             background-size: 300px;
             background-blend-mode: overlay;
             background-attachment: fixed;
-            opacity: 0.95;
         }
         
-        /* Header Styles */
+        /* Header Styles with Kutch Theme */
         header {
-            background: linear-gradient(135deg, #d35400, #e67e22);
+            background: linear-gradient(135deg, #E21717, #e67e22, #f1c40f);
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
             position: relative;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-bottom: 3px solid #f1c40f;
+            box-shadow: 0 4px 20px rgba(226, 23, 23, 0.3);
+            border-bottom: 5px solid #23C552;
+            overflow: hidden;
         }
         
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
             font-family: 'Shrikhand', cursive;
+            color: #FFD700;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e67e22, 0 0 40px #e67e22;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700;
+            }
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             opacity: 0.9;
             margin-bottom: 1.5rem;
-            font-style: italic;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        /* Kutch Pattern Background */
+        .kutch-pattern-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/JQl1xWm.jpg');
+            background-size: cover;
+            opacity: 0.15;
+            z-index: 1;
         }
         
         /* Main Content */
@@ -68,15 +96,20 @@
         
         .wish-container {
             background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 25px rgba(226, 23, 23, 0.2);
             width: 100%;
             text-align: center;
             margin-bottom: 2rem;
             position: relative;
             overflow: hidden;
-            border: 1px solid #e67e22;
+            border: 2px solid #E21717;
+            transition: transform 0.3s ease;
+        }
+        
+        .wish-container:hover {
+            transform: translateY(-5px);
         }
         
         .wish-container::before {
@@ -85,28 +118,40 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #d35400, #e67e22, #f39c12, #f1c40f);
+            height: 8px;
+            background: linear-gradient(90deg, #E21717, #e67e22, #f1c40f, #23C552, #12B0E8);
+            animation: rainbow 5s linear infinite;
+        }
+        
+        @keyframes rainbow {
+            0% {background-position: 0% 50%;}
+            100% {background-position: 100% 50%;}
         }
         
         .wish-text {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
             line-height: 1.8;
+            color: #333;
         }
         
-        .kutchi-text {
-            font-size: 1.8rem;
-            color: #d35400;
+        .gujarati-text {
+            font-size: 2.2rem;
+            color: #E21717;
             font-weight: bold;
-            margin: 2rem 0;
-            font-style: italic;
+            margin: 2.5rem 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
             font-family: 'Noto Sans Gujarati', sans-serif;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .transliteration {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #666;
             margin-top: 0.5rem;
             font-style: italic;
@@ -117,22 +162,32 @@
             display: flex;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(226, 23, 23, 0.2);
             width: 100%;
             margin-top: 1rem;
-            border: 1px solid #e67e22;
+            border: 2px solid #23C552;
+            transition: all 0.3s ease;
+        }
+        
+        .profile:hover {
+            box-shadow: 0 15px 30px rgba(226, 23, 23, 0.3);
         }
         
         .profile-image {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #f8f1e9;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            margin-right: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-right: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: rotate(5deg) scale(1.05);
         }
         
         .profile-info {
@@ -141,92 +196,134 @@
         }
         
         .profile-name {
-            font-size: 1.5rem;
-            color: #d35400;
+            font-size: 1.8rem;
+            color: #E21717;
             margin-bottom: 0.5rem;
             font-family: 'Shrikhand', cursive;
         }
         
         .profile-title {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #666;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             font-weight: normal;
         }
         
         .profile-description {
-            font-size: 0.9rem;
-            color: #777;
-        }
-        
-        /* Decorative Elements */
-        .decoration {
-            position: absolute;
-            opacity: 0.2;
-            z-index: 0;
-        }
-        
-        .decoration-1 {
-            top: 20%;
-            left: 5%;
-            font-size: 5rem;
-            transform: rotate(-15deg);
-        }
-        
-        .decoration-2 {
-            bottom: 10%;
-            right: 5%;
-            font-size: 5rem;
-            transform: rotate(15deg);
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
         }
         
         /* Kutchi Patterns */
         .kutchi-pattern {
-            height: 20px;
+            height: 30px;
             width: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path d="M0,10 Q25,20 50,10 T100,10" fill="none" stroke="%23e67e22" stroke-width="2"/></svg>');
-            margin: 1rem 0;
-            opacity: 0.7;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><path d="M0,15 Q25,30 50,15 T100,15" fill="none" stroke="%23E21717" stroke-width="3"/></svg>');
+            margin: 2rem 0;
+            background-repeat: repeat-x;
+            opacity: 0.8;
+        }
+        
+        /* Celebration Image */
+        .celebration-image {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 3px solid #f1c40f;
+            transition: all 0.3s ease;
+        }
+        
+        .celebration-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+        }
+        
+        /* Music Player */
+        .music-player {
+            background: linear-gradient(135deg, #f8f1e9, #ffffff);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #12B0E8;
+            text-align: center;
+        }
+        
+        .music-player h3 {
+            color: #E21717;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
         
         /* Animation */
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
         
         .floating {
-            animation: float 3s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Diya Animation */
+        .diya-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 1rem auto;
+        }
+        
+        .diya {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #FFD700 10%, #e67e22 60%, #E21717 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            box-shadow: 0 0 30px #FFD700;
+            animation: flicker 3s ease-in-out infinite alternate;
+            z-index: 2;
+        }
+        
+        @keyframes flicker {
+            0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 30px #FFD700; }
+            25% { transform: scale(0.95); opacity: 0.9; box-shadow: 0 0 25px #FFD700; }
+            50% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 35px #FFD700; }
+            75% { transform: scale(0.98); opacity: 0.95; box-shadow: 0 0 28px #FFD700; }
         }
         
         /* Footer */
         footer {
-            background-color: #333;
+            background: linear-gradient(135deg, #E21717, #e67e22);
             color: white;
             text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 2rem;
-            border-top: 3px solid #f1c40f;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 5px solid #23C552;
         }
         
         .footer-text {
-            font-size: 0.9rem;
-            opacity: 0.8;
+            font-size: 1rem;
+            opacity: 0.9;
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .subtitle {
-                font-size: 1rem;
+                font-size: 1.3rem;
             }
             
-            .kutchi-text {
-                font-size: 1.4rem;
+            .gujarati-text {
+                font-size: 1.6rem;
             }
             
             .profile {
@@ -236,78 +333,92 @@
             
             .profile-image {
                 margin-right: 0;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
+                width: 120px;
+                height: 120px;
             }
             
             .profile-info {
                 text-align: center;
             }
             
-            .decoration-1, .decoration-2 {
-                display: none;
+            .wish-container {
+                padding: 2rem 1.5rem;
             }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <div class="kutch-pattern-bg"></div>
         <div class="header-content">
-            <h1>Happy Asadhi Beej</h1>
-            <p class="subtitle">Kutchi Nutan Varsh Abhinandan</p>
+            <h1>કચ્છનું નવું વર્ષ</h1>
+            <p class="subtitle">આષાઢી બીજની લાખ લાખ શુભકામનાઓ</p>
+            
+            <div class="diya-container">
+                <div class="diya"></div>
+            </div>
         </div>
     </header>
     
     <div class="container">
         <div class="wish-container">
-            <div class="decoration decoration-1">🌿</div>
-            <div class="decoration decoration-2">🌾</div>
-            
             <p class="wish-text">
-                On this auspicious occasion of Asadhi Beej, the Kutchi New Year, I extend my warmest wishes to you and your family. May this new year bring you happiness, prosperity, and success in all your endeavors.
+                આષાઢી બીજના આ શુભ પ્રસંગે, કચ્છી નવા વર્ષે, હું તમને અને તમારા પરિવારને હાર્દિક શુભકામનાઓ પાઠવું છું. આ નવું વર્ષ તમારા જીવનમાં સુખ, સમૃદ્ધિ અને સફળતા લઈને આવે તેવી ભગવાન સમક્ષ પ્રાર્થના.
             </p>
             
             <div class="kutchi-pattern"></div>
             
-            <p class="kutchi-text">"આસાઢી બીજની લાખ લાખ શુભકામનાઓ"</p>
-            <p class="transliteration">"Aasaḍhī Bījnī lākh lākh śubhakāmnāo"</p>
+            <p class="gujarati-text">"આષાઢી બીજની લાખ લાખ વધાઈઓ"</p>
+            <p class="transliteration">"Aashaḍhī Bījnī lākh lākh vadhāīo"</p>
             
-            <p class="kutchi-text">"તમને નવા વર્ષે ધરમ, દયા, દાન, ધન, ધ્યાન, દુઃખ દૂર કરે"</p>
+            <p class="gujarati-text">"તમને નવા વર્ષે ધરમ, દયા, દાન, ધન, ધ્યાન, દુઃખ દૂર કરે"</p>
             <p class="transliteration">"Tamanē navā varṣē dharma, dayā, dāna, dhana, dhyāna, duḥkha dūra karē"</p>
             
             <div class="kutchi-pattern"></div>
             
+            <img src="https://i.imgur.com/JQl1xWm.jpg" alt="આષાઢી બીજ ઉજવણી" class="celebration-image floating">
+            
             <p class="wish-text">
-                May the traditions and values of our Kutchi culture continue to inspire us, and may we grow together in harmony and joy. Wishing you a year filled with good health, peace, and abundant blessings.
+                અમારી કચ્છી સંસ્કૃતિ અને પરંપરાઓ આપણને સદાય પ્રેરિત કરતી રહે અને આપણે સૌ મળીને સુખ-શાંતિમાં વિકાસ કરીએ. તમારા જીવનમાં સારું આરોગ્ય, શાંતિ અને અસંખ્ય આશીર્વાદો ભરપૂર વર્ષ મળે તેવી શુભેચ્છા.
             </p>
             
-            <img src="https://i.imgur.com/JQl1xWm.jpg" alt="Asadhi Beej Celebration" style="max-width: 100%; border-radius: 8px; margin: 1rem 0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 2px solid #e67e22;" class="floating">
+            <p class="gujarati-text">"આષાઢી બીજની શુભકામનાઓ, ભગવાન તમારા ઘરમાં ખુશીઓ ભરી દે!"</p>
+            <p class="transliteration">"Aashaḍhī Bījnī śubhakāmnāo, Bhagavān tamārā gharamāṁ khuśī'o bharī dē!"</p>
             
-            <p class="kutchi-text">"આસાઢી બીજની શુભકામનાઓ, ભગવાન તમારા ઘરમાં ખુશીઓ ભરી દે!"</p>
-            <p class="transliteration">"Aasaḍhī Bījnī śubhakāmnāo, Bhagavān tamārā gharamāṁ khuśī'o bharī dē!"</p>
+            <!-- Music Player -->
+            <div class="music-player">
+                <h3>કચ્છી લોકગીત</h3>
+                <audio controls autoplay loop style="width: 100%; max-width: 400px; margin-top: 1rem;">
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    તમારું બ્રાઉઝર ઑડિયો સપોર્ટ કરતું નથી.
+                </audio>
+                <p style="margin-top: 1rem; color: #666;">કચ્છી નવા વર્ષની ઉજવણીનો આનંદ લો!</p>
+            </div>
         </div>
         
         <div class="profile">
-            <img src="https://via.placeholder.com/120/333333/ffffff?text=JD" alt="Jay Dholi" class="profile-image">
+            <img src="https://via.placeholder.com/150/333333/ffffff?text=JD" alt="Jay Dholi" class="profile-image">
             <div class="profile-info">
-                <h2 class="profile-name">Jay Dholi</h2>
-                <p class="profile-title">Certified Analyst and Data Science Professional</p>
+                <h2 class="profile-name">જય ઢોળી</h2>
+                <p class="profile-title">સર્ટિફાઇડ એનાલિસ્ટ અને ડેટા સાયન્સ પ્રોફેશનલ</p>
                 <p class="profile-description">
-                    "મારા પરિવાર તરફથી તમે અને તમારા પરિવારને આસાઢી બીજની હાર્દિક શુભકામનાઓ. નવા વર્ષમાં સુખ, સમૃદ્ધિ અને સ્વાસ્થ્ય મળે એવી ભગવાન સમક્ષ પ્રાર્થના."
+                    "મારા પરિવાર તરફથી તમે અને તમારા પરિવારને આષાઢી બીજની હાર્દિક શુભકામનાઓ. નવા વર્ષમાં સુખ, સમૃદ્ધિ અને સ્વાસ્થ્ય મળે એવી ભગવાન સમક્ષ પ્રાર્થના."
                     <br><br>
-                    <em>"Mārā parivāra taraphathī tamē anē tamārā parivāranē Aasaḍhī Bījnī hārdika śubhakāmnāo. Navā varṣamāṁ sukha, samr̥d'dhi anē svāsthya maḷē ēvī Bhagavān samakṣa prārthanā."</em>
+                    <em>"Mārā parivāra taraphathī tamē anē tamārā parivāranē Aashaḍhī Bījnī hārdika śubhakāmnāo. Navā varṣamāṁ sukha, samr̥d'dhi anē svāsthya maḷē ēvī Bhagavān samakṣa prārthanā."</em>
                 </p>
             </div>
         </div>
     </div>
     
     <footer>
-        <p class="footer-text">© <span id="year"></span> Jay Dholi | Certified Analyst & Data Science Professional | All Rights Reserved</p>
+        <p class="footer-text">© <span id="year"></span> જય ઢોળી | સર્ટિફાઇડ એનાલિસ્ટ અને ડેટા સાયન્સ પ્રોફેશનલ | તમામ હક્કો રાખવામાં આવ્યા છે.</p>
     </footer>
     
     <script>
-        // Simple animation and interaction
+        // Enhanced animations and interactions
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year in footer
             document.getElementById('year').textContent = new Date().getFullYear();
@@ -320,34 +431,38 @@
             // Auto-confetti on load
             setTimeout(() => {
                 createConfetti(window.innerWidth / 2, window.innerHeight / 2);
+                setTimeout(() => {
+                    createConfetti(window.innerWidth / 4, window.innerHeight / 3);
+                    createConfetti(window.innerWidth * 3/4, window.innerHeight * 2/3);
+                }, 500);
             }, 1000);
             
-            // Function to create simple confetti
+            // Function to create enhanced confetti
             function createConfetti(x, y) {
-                const colors = ['#e67e22', '#f1c40f', '#2ecc71', '#3498db', '#9b59b6'];
-                const confettiCount = 30;
-                const kutchiSymbols = ['🌾', '🪔', '🌸', '🌿', '🫒', '🍃', '🌻'];
+                const colors = ['#E21717', '#e67e22', '#f1c40f', '#23C552', '#12B0E8', '#FFD700'];
+                const confettiCount = 50;
+                const gujaratiSymbols = ['🌾', '🪔', '🌸', '🌿', '🫒', '🍃', '🌻', '✨', '🥳', '🙏'];
                 
                 for (let i = 0; i < confettiCount; i++) {
                     const confetti = document.createElement('div');
-                    confetti.innerHTML = kutchiSymbols[Math.floor(Math.random() * kutchiSymbols.length)];
+                    confetti.innerHTML = gujaratiSymbols[Math.floor(Math.random() * gujaratiSymbols.length)];
                     confetti.style.position = 'fixed';
                     confetti.style.left = x + 'px';
                     confetti.style.top = y + 'px';
-                    confetti.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                    confetti.style.fontSize = (Math.random() * 25 + 15) + 'px';
                     confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
                     confetti.style.pointerEvents = 'none';
                     confetti.style.zIndex = '1000';
-                    confetti.style.transform = `translate(${Math.random() * 400 - 200}px, ${Math.random() * 400 - 200}px) rotate(${Math.random() * 360}deg)`;
                     confetti.style.opacity = '0';
+                    confetti.style.transform = `translate(${Math.random() * 400 - 200}px, ${Math.random() * 400 - 200}px) rotate(${Math.random() * 360}deg) scale(0)`;
                     
                     document.body.appendChild(confetti);
                     
                     // Animate in
                     setTimeout(() => {
-                        confetti.style.transition = 'all 1s ease-out';
+                        confetti.style.transition = 'all 1s ease-out, transform 0.5s ease-out';
                         confetti.style.opacity = '1';
-                        confetti.style.transform = `translate(${Math.random() * 400 - 200}px, ${Math.random() * 400 + 200}px) rotate(${Math.random() * 360}deg)`;
+                        confetti.style.transform = `translate(${Math.random() * 600 - 300}px, ${Math.random() * 600 + 300}px) rotate(${Math.random() * 720}deg) scale(1)`;
                     }, 10);
                     
                     // Remove after animation
@@ -356,7 +471,7 @@
                         setTimeout(() => {
                             confetti.remove();
                         }, 1000);
-                    }, 1000);
+                    }, 2000);
                 }
             }
             
@@ -370,11 +485,45 @@
                 if (i < originalText.length) {
                     title.textContent += originalText.charAt(i);
                     i++;
+                    // Add confetti every few characters
+                    if (i % 3 === 0) {
+                        createConfetti(
+                            Math.random() * window.innerWidth,
+                            Math.random() * 100 + 50
+                        );
+                    }
                 } else {
                     clearInterval(typeWriter);
+                    // Final confetti burst
+                    for (let j = 0; j < 5; j++) {
+                        setTimeout(() => {
+                            createConfetti(
+                                Math.random() * window.innerWidth,
+                                Math.random() * 100 + 50
+                            );
+                        }, j * 200);
+                    }
                 }
-            }, 100);
+            }, 150);
+            
+            // Floating animation for celebration elements
+            const floatElements = document.querySelectorAll('.floating');
+            floatElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.3}s`;
+            });
+            
+            // Background music control
+            const audio = document.querySelector('audio');
+            audio.volume = 0.3; // Set lower volume by default
+            
+            // Add visual feedback when music plays
+            audio.addEventListener('play', () => {
+                document.querySelector('.music-player').style.boxShadow = '0 0 20px #12B0E8';
+                setTimeout(() => {
+                    document.querySelector('.music-player').style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                }, 1000);
+            });
         });
     </script>
 </body>
-</html>
+</html
