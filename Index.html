@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>કચ્છનું નવું વર્ષ - આષાઢી બીજ | Jay Dholi</title>
+    <title>કચ્છનું નવું વર્ષ - આષાઢી બીજ | જય ઢોળી</title>
     <style>
         /* Global Styles */
         * {
@@ -24,9 +24,9 @@
             background-attachment: fixed;
         }
         
-        /* Header Styles with Kutch Theme */
+        /* Header Styles */
         header {
-            background: linear-gradient(135deg, #E21717, #e67e22, #f1c40f);
+            background: linear-gradient(135deg, #E21717, #e67e22);
             color: white;
             text-align: center;
             padding: 3rem 0;
@@ -45,26 +45,15 @@
         }
         
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             font-family: 'Shrikhand', cursive;
             color: #FFD700;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e67e22, 0 0 40px #e67e22;
-            }
-            to {
-                text-shadow: 0 0 20px #fff, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700;
-            }
         }
         
         .subtitle {
-            font-size: 1.8rem;
-            opacity: 0.9;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
             font-weight: bold;
             color: white;
@@ -85,76 +74,74 @@
         }
         
         /* Main Content */
-        .container {
+        .main-container {
             max-width: 1000px;
             margin: 2rem auto;
             padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         
-        .wish-container {
+        .card {
             background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 3rem;
-            box-shadow: 0 10px 25px rgba(226, 23, 23, 0.2);
-            width: 100%;
-            text-align: center;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 2rem;
             position: relative;
             overflow: hidden;
-            border: 2px solid #E21717;
-            transition: transform 0.3s ease;
+            border: 1px solid #E21717;
         }
         
-        .wish-container:hover {
-            transform: translateY(-5px);
+        .card-header {
+            text-align: center;
+            margin-bottom: 2rem;
         }
         
-        .wish-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: linear-gradient(90deg, #E21717, #e67e22, #f1c40f, #23C552, #12B0E8);
-            animation: rainbow 5s linear infinite;
-        }
-        
-        @keyframes rainbow {
-            0% {background-position: 0% 50%;}
-            100% {background-position: 100% 50%;}
+        .card-title {
+            font-size: 1.8rem;
+            color: #E21717;
+            margin-bottom: 1rem;
+            font-family: 'Shrikhand', cursive;
         }
         
         .wish-text {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 1.5rem;
             line-height: 1.8;
-            color: #333;
+            text-align: justify;
         }
         
         .gujarati-text {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: #E21717;
             font-weight: bold;
-            margin: 2.5rem 0;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            text-align: center;
             font-family: 'Noto Sans Gujarati', sans-serif;
-            animation: fadeIn 2s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         .transliteration {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #666;
-            margin-top: 0.5rem;
+            margin: 0.5rem 0 2rem;
+            text-align: center;
             font-style: italic;
+        }
+        
+        /* Celebration Image */
+        .celebration-image {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #f1c40f;
+        }
+        
+        /* Divider */
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #E21717, transparent);
+            margin: 2rem 0;
         }
         
         /* Profile Section */
@@ -162,139 +149,61 @@
             display: flex;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 2rem;
-            box-shadow: 0 10px 25px rgba(226, 23, 23, 0.2);
-            width: 100%;
-            margin-top: 1rem;
-            border: 2px solid #23C552;
-            transition: all 0.3s ease;
-        }
-        
-        .profile:hover {
-            box-shadow: 0 15px 30px rgba(226, 23, 23, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+            border: 1px solid #23C552;
         }
         
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #f8f1e9;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 3px solid #f8f1e9;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             margin-right: 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .profile-image:hover {
-            transform: rotate(5deg) scale(1.05);
         }
         
         .profile-info {
-            text-align: left;
             flex: 1;
         }
         
         .profile-name {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #E21717;
             margin-bottom: 0.5rem;
             font-family: 'Shrikhand', cursive;
         }
         
         .profile-title {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #666;
             margin-bottom: 1rem;
-            font-weight: normal;
         }
         
         .profile-description {
             font-size: 1rem;
             color: #555;
-            line-height: 1.7;
-        }
-        
-        /* Kutchi Patterns */
-        .kutchi-pattern {
-            height: 30px;
-            width: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><path d="M0,15 Q25,30 50,15 T100,15" fill="none" stroke="%23E21717" stroke-width="3"/></svg>');
-            margin: 2rem 0;
-            background-repeat: repeat-x;
-            opacity: 0.8;
-        }
-        
-        /* Celebration Image */
-        .celebration-image {
-            max-width: 100%;
-            border-radius: 12px;
-            margin: 2rem 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            border: 3px solid #f1c40f;
-            transition: all 0.3s ease;
-        }
-        
-        .celebration-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+            line-height: 1.6;
         }
         
         /* Music Player */
-        .music-player {
-            background: linear-gradient(135deg, #f8f1e9, #ffffff);
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            width: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 2px solid #12B0E8;
+        .music-section {
             text-align: center;
+            margin: 2rem 0;
         }
         
-        .music-player h3 {
-            color: #E21717;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        /* Animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        /* Diya Animation */
-        .diya-container {
-            position: relative;
-            width: 100px;
-            height: 100px;
-            margin: 1rem auto;
-        }
-        
-        .diya {
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle, #FFD700 10%, #e67e22 60%, #E21717 100%);
-            border-radius: 50%;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            box-shadow: 0 0 30px #FFD700;
-            animation: flicker 3s ease-in-out infinite alternate;
-            z-index: 2;
-        }
-        
-        @keyframes flicker {
-            0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 30px #FFD700; }
-            25% { transform: scale(0.95); opacity: 0.9; box-shadow: 0 0 25px #FFD700; }
-            50% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 35px #FFD700; }
-            75% { transform: scale(0.98); opacity: 0.95; box-shadow: 0 0 28px #FFD700; }
+        .music-player {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: inline-block;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 1px solid #12B0E8;
+            max-width: 400px;
+            width: 100%;
         }
         
         /* Footer */
@@ -304,7 +213,6 @@
             text-align: center;
             padding: 2rem 0;
             margin-top: 3rem;
-            border-top: 5px solid #23C552;
         }
         
         .footer-text {
@@ -315,15 +223,19 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .subtitle {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
             }
             
             .gujarati-text {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
             }
             
             .profile {
@@ -334,16 +246,6 @@
             .profile-image {
                 margin-right: 0;
                 margin-bottom: 1.5rem;
-                width: 120px;
-                height: 120px;
-            }
-            
-            .profile-info {
-                text-align: center;
-            }
-            
-            .wish-container {
-                padding: 2rem 1.5rem;
             }
         }
     </style>
@@ -356,20 +258,20 @@
         <div class="header-content">
             <h1>કચ્છનું નવું વર્ષ</h1>
             <p class="subtitle">આષાઢી બીજની લાખ લાખ શુભકામનાઓ</p>
-            
-            <div class="diya-container">
-                <div class="diya"></div>
-            </div>
         </div>
     </header>
     
-    <div class="container">
-        <div class="wish-container">
+    <div class="main-container">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">નવા વર્ષની હાર્દિક શુભેચ્છા</h2>
+            </div>
+            
             <p class="wish-text">
                 આષાઢી બીજના આ શુભ પ્રસંગે, કચ્છી નવા વર્ષે, હું તમને અને તમારા પરિવારને હાર્દિક શુભકામનાઓ પાઠવું છું. આ નવું વર્ષ તમારા જીવનમાં સુખ, સમૃદ્ધિ અને સફળતા લઈને આવે તેવી ભગવાન સમક્ષ પ્રાર્થના.
             </p>
             
-            <div class="kutchi-pattern"></div>
+            <div class="divider"></div>
             
             <p class="gujarati-text">"આષાઢી બીજની લાખ લાખ વધાઈઓ"</p>
             <p class="transliteration">"Aashaḍhī Bījnī lākh lākh vadhāīo"</p>
@@ -377,9 +279,9 @@
             <p class="gujarati-text">"તમને નવા વર્ષે ધરમ, દયા, દાન, ધન, ધ્યાન, દુઃખ દૂર કરે"</p>
             <p class="transliteration">"Tamanē navā varṣē dharma, dayā, dāna, dhana, dhyāna, duḥkha dūra karē"</p>
             
-            <div class="kutchi-pattern"></div>
+            <img src="https://i.imgur.com/JQl1xWm.jpg" alt="આષાઢી બીજ ઉજવણી" class="celebration-image">
             
-            <img src="https://i.imgur.com/JQl1xWm.jpg" alt="આષાઢી બીજ ઉજવણી" class="celebration-image floating">
+            <div class="divider"></div>
             
             <p class="wish-text">
                 અમારી કચ્છી સંસ્કૃતિ અને પરંપરાઓ આપણને સદાય પ્રેરિત કરતી રહે અને આપણે સૌ મળીને સુખ-શાંતિમાં વિકાસ કરીએ. તમારા જીવનમાં સારું આરોગ્ય, શાંતિ અને અસંખ્ય આશીર્વાદો ભરપૂર વર્ષ મળે તેવી શુભેચ્છા.
@@ -388,21 +290,22 @@
             <p class="gujarati-text">"આષાઢી બીજની શુભકામનાઓ, ભગવાન તમારા ઘરમાં ખુશીઓ ભરી દે!"</p>
             <p class="transliteration">"Aashaḍhī Bījnī śubhakāmnāo, Bhagavān tamārā gharamāṁ khuśī'o bharī dē!"</p>
             
-            <!-- Music Player -->
-            <div class="music-player">
-                <h3>કચ્છી લોકગીત</h3>
-                <audio controls autoplay loop style="width: 100%; max-width: 400px; margin-top: 1rem;">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                    તમારું બ્રાઉઝર ઑડિયો સપોર્ટ કરતું નથી.
-                </audio>
-                <p style="margin-top: 1rem; color: #666;">કચ્છી નવા વર્ષની ઉજવણીનો આનંદ લો!</p>
+            <div class="music-section">
+                <div class="music-player">
+                    <h3>કચ્છી લોકગીત</h3>
+                    <audio controls style="width: 100%; margin-top: 1rem;">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        તમારું બ્રાઉઝર ઑડિયો સપોર્ટ કરતું નથી.
+                    </audio>
+                    <p style="margin-top: 1rem; color: #666;">કચ્છી નવા વર્ષની ઉજવણીનો આનંદ લો!</p>
+                </div>
             </div>
         </div>
         
         <div class="profile">
-            <img src="https://via.placeholder.com/150/333333/ffffff?text=JD" alt="Jay Dholi" class="profile-image">
+            <img src="https://via.placeholder.com/120/333333/ffffff?text=JD" alt="જય ઢોળી" class="profile-image">
             <div class="profile-info">
-                <h2 class="profile-name">જય ઢોળી</h2>
+                <h3 class="profile-name">જય ઢોળી</h3>
                 <p class="profile-title">સર્ટિફાઇડ એનાલિસ્ટ અને ડેટા સાયન્સ પ્રોફેશનલ</p>
                 <p class="profile-description">
                     "મારા પરિવાર તરફથી તમે અને તમારા પરિવારને આષાઢી બીજની હાર્દિક શુભકામનાઓ. નવા વર્ષમાં સુખ, સમૃદ્ધિ અને સ્વાસ્થ્ય મળે એવી ભગવાન સમક્ષ પ્રાર્થના."
@@ -418,64 +321,11 @@
     </footer>
     
     <script>
-        // Enhanced animations and interactions
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year in footer
             document.getElementById('year').textContent = new Date().getFullYear();
             
-            // Add confetti effect on click
-            document.body.addEventListener('click', function(e) {
-                createConfetti(e.clientX, e.clientY);
-            });
-            
-            // Auto-confetti on load
-            setTimeout(() => {
-                createConfetti(window.innerWidth / 2, window.innerHeight / 2);
-                setTimeout(() => {
-                    createConfetti(window.innerWidth / 4, window.innerHeight / 3);
-                    createConfetti(window.innerWidth * 3/4, window.innerHeight * 2/3);
-                }, 500);
-            }, 1000);
-            
-            // Function to create enhanced confetti
-            function createConfetti(x, y) {
-                const colors = ['#E21717', '#e67e22', '#f1c40f', '#23C552', '#12B0E8', '#FFD700'];
-                const confettiCount = 50;
-                const gujaratiSymbols = ['🌾', '🪔', '🌸', '🌿', '🫒', '🍃', '🌻', '✨', '🥳', '🙏'];
-                
-                for (let i = 0; i < confettiCount; i++) {
-                    const confetti = document.createElement('div');
-                    confetti.innerHTML = gujaratiSymbols[Math.floor(Math.random() * gujaratiSymbols.length)];
-                    confetti.style.position = 'fixed';
-                    confetti.style.left = x + 'px';
-                    confetti.style.top = y + 'px';
-                    confetti.style.fontSize = (Math.random() * 25 + 15) + 'px';
-                    confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.pointerEvents = 'none';
-                    confetti.style.zIndex = '1000';
-                    confetti.style.opacity = '0';
-                    confetti.style.transform = `translate(${Math.random() * 400 - 200}px, ${Math.random() * 400 - 200}px) rotate(${Math.random() * 360}deg) scale(0)`;
-                    
-                    document.body.appendChild(confetti);
-                    
-                    // Animate in
-                    setTimeout(() => {
-                        confetti.style.transition = 'all 1s ease-out, transform 0.5s ease-out';
-                        confetti.style.opacity = '1';
-                        confetti.style.transform = `translate(${Math.random() * 600 - 300}px, ${Math.random() * 600 + 300}px) rotate(${Math.random() * 720}deg) scale(1)`;
-                    }, 10);
-                    
-                    // Remove after animation
-                    setTimeout(() => {
-                        confetti.style.opacity = '0';
-                        setTimeout(() => {
-                            confetti.remove();
-                        }, 1000);
-                    }, 2000);
-                }
-            }
-            
-            // Typewriter effect for the main heading
+            // Simple typewriter effect for the main heading
             const title = document.querySelector('h1');
             const originalText = title.textContent;
             title.textContent = '';
@@ -485,45 +335,11 @@
                 if (i < originalText.length) {
                     title.textContent += originalText.charAt(i);
                     i++;
-                    // Add confetti every few characters
-                    if (i % 3 === 0) {
-                        createConfetti(
-                            Math.random() * window.innerWidth,
-                            Math.random() * 100 + 50
-                        );
-                    }
                 } else {
                     clearInterval(typeWriter);
-                    // Final confetti burst
-                    for (let j = 0; j < 5; j++) {
-                        setTimeout(() => {
-                            createConfetti(
-                                Math.random() * window.innerWidth,
-                                Math.random() * 100 + 50
-                            );
-                        }, j * 200);
-                    }
                 }
             }, 150);
-            
-            // Floating animation for celebration elements
-            const floatElements = document.querySelectorAll('.floating');
-            floatElements.forEach((el, index) => {
-                el.style.animationDelay = `${index * 0.3}s`;
-            });
-            
-            // Background music control
-            const audio = document.querySelector('audio');
-            audio.volume = 0.3; // Set lower volume by default
-            
-            // Add visual feedback when music plays
-            audio.addEventListener('play', () => {
-                document.querySelector('.music-player').style.boxShadow = '0 0 20px #12B0E8';
-                setTimeout(() => {
-                    document.querySelector('.music-player').style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-                }, 1000);
-            });
         });
     </script>
 </body>
-</html
+</html>
