@@ -14,26 +14,22 @@
         }
         
         body {
-            background-color: #f8f1e9;
-            color: #333;
+            background: linear-gradient(135deg, #FF512F, #DD2476);
+            color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
-            background-image: url('https://i.imgur.com/ZYwDk8a.png');
-            background-size: 300px;
-            background-blend-mode: overlay;
-            background-attachment: fixed;
+            min-height: 100vh;
         }
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, #E21717, #e67e22);
+            background: linear-gradient(135deg, rgba(226, 23, 23, 0.9), rgba(230, 126, 34, 0.9));
             color: white;
             text-align: center;
-            padding: 3rem 0;
+            padding: 4rem 0;
             position: relative;
-            box-shadow: 0 4px 20px rgba(226, 23, 23, 0.3);
-            border-bottom: 5px solid #23C552;
-            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 3rem;
         }
         
         .header-content {
@@ -45,84 +41,81 @@
         }
         
         h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
             font-family: 'Shrikhand', cursive;
             color: #FFD700;
         }
         
         .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
             font-weight: bold;
-            color: white;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-        
-        /* Kutch Pattern Background */
-        .kutch-pattern-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://i.imgur.com/JQl1xWm.jpg');
-            background-size: cover;
-            opacity: 0.15;
-            z-index: 1;
         }
         
         /* Main Content */
         .main-container {
             max-width: 1000px;
-            margin: 2rem auto;
+            margin: 0 auto 4rem;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
         
-        .card {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 2.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+        /* Celebration Card */
+        .celebration-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            margin-bottom: 3rem;
             position: relative;
             overflow: hidden;
-            border: 1px solid #E21717;
+            border: none;
+            color: #333;
         }
         
-        .card-header {
-            text-align: center;
-            margin-bottom: 2rem;
+        .celebration-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #E21717, #e67e22, #f1c40f, #23C552, #12B0E8);
         }
         
         .card-title {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: #E21717;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
             font-family: 'Shrikhand', cursive;
         }
         
         .wish-text {
             font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             line-height: 1.8;
-            text-align: justify;
+            text-align: center;
         }
         
         .gujarati-text {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #E21717;
             font-weight: bold;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             text-align: center;
             font-family: 'Noto Sans Gujarati', sans-serif;
+            line-height: 1.4;
         }
         
         .transliteration {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #666;
-            margin: 0.5rem 0 2rem;
+            margin: 1rem 0 2rem;
             text-align: center;
             font-style: italic;
         }
@@ -130,40 +123,60 @@
         /* Celebration Image */
         .celebration-image {
             max-width: 100%;
-            border-radius: 8px;
-            margin: 2rem auto;
+            border-radius: 10px;
+            margin: 2.5rem auto;
             display: block;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 2px solid #f1c40f;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 3px solid #f1c40f;
+            transition: transform 0.3s ease;
+        }
+        
+        .celebration-image:hover {
+            transform: scale(1.02);
         }
         
         /* Divider */
         .divider {
-            height: 2px;
+            height: 3px;
             background: linear-gradient(90deg, transparent, #E21717, transparent);
-            margin: 2rem 0;
+            margin: 3rem 0;
+            border: none;
         }
         
-        /* Profile Section */
-        .profile {
+        /* Jay Dholi Profile Section */
+        .profile-section {
+            background: linear-gradient(135deg, rgba(35, 197, 82, 0.9), rgba(18, 176, 232, 0.9));
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            margin-top: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+        }
+        
+        .profile-content {
             display: flex;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-            border: 1px solid #23C552;
+            position: relative;
+            z-index: 2;
         }
         
         .profile-image {
-            width: 120px;
-            height: 120px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #f8f1e9;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            margin-right: 2rem;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin-right: 3rem;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: rotate(5deg) scale(1.05);
+            border-color: rgba(255, 255, 255, 0.6);
         }
         
         .profile-info {
@@ -171,81 +184,109 @@
         }
         
         .profile-name {
-            font-size: 1.5rem;
-            color: #E21717;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
             font-family: 'Shrikhand', cursive;
+            color: #FFD700;
         }
         
         .profile-title {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
         }
         
         .profile-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-quote {
+            font-style: italic;
             font-size: 1rem;
-            color: #555;
-            line-height: 1.6;
+            opacity: 0.9;
+            padding-left: 1.5rem;
+            border-left: 3px solid #FFD700;
         }
         
         /* Music Player */
         .music-section {
             text-align: center;
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
         
         .music-player {
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 2rem;
             display: inline-block;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border: 1px solid #12B0E8;
-            max-width: 400px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-width: 500px;
             width: 100%;
+        }
+        
+        .music-title {
+            color: #E21717;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-family: 'Shrikhand', cursive;
         }
         
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #E21717, #e67e22);
+            background: linear-gradient(135deg, rgba(226, 23, 23, 0.9), rgba(230, 126, 34, 0.9));
             color: white;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
         }
         
         .footer-text {
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .subtitle {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             
-            .card {
-                padding: 1.5rem;
+            .celebration-card, .profile-section {
+                padding: 2rem;
             }
             
             .gujarati-text {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
             
-            .profile {
+            .profile-content {
                 flex-direction: column;
                 text-align: center;
             }
             
             .profile-image {
                 margin-right: 0;
-                margin-bottom: 1.5rem;
+                margin-bottom: 2rem;
+                width: 150px;
+                height: 150px;
+            }
+            
+            .profile-info {
+                text-align: center;
+            }
+            
+            .profile-quote {
+                padding-left: 0;
+                border-left: none;
+                padding-top: 1rem;
+                border-top: 2px solid #FFD700;
             }
         }
     </style>
@@ -254,7 +295,6 @@
 </head>
 <body>
     <header>
-        <div class="kutch-pattern-bg"></div>
         <div class="header-content">
             <h1>કચ્છનું નવું વર્ષ</h1>
             <p class="subtitle">આષાઢી બીજની લાખ લાખ શુભકામનાઓ</p>
@@ -262,16 +302,14 @@
     </header>
     
     <div class="main-container">
-        <div class="card">
-            <div class="card-header">
-                <h2 class="card-title">નવા વર્ષની હાર્દિક શુભેચ્છા</h2>
-            </div>
+        <div class="celebration-card">
+            <h2 class="card-title">નવા વર્ષની હાર્દિક શુભેચ્છા</h2>
             
             <p class="wish-text">
                 આષાઢી બીજના આ શુભ પ્રસંગે, કચ્છી નવા વર્ષે, હું તમને અને તમારા પરિવારને હાર્દિક શુભકામનાઓ પાઠવું છું. આ નવું વર્ષ તમારા જીવનમાં સુખ, સમૃદ્ધિ અને સફળતા લઈને આવે તેવી ભગવાન સમક્ષ પ્રાર્થના.
             </p>
             
-            <div class="divider"></div>
+            <hr class="divider">
             
             <p class="gujarati-text">"આષાઢી બીજની લાખ લાખ વધાઈઓ"</p>
             <p class="transliteration">"Aashaḍhī Bījnī lākh lākh vadhāīo"</p>
@@ -281,7 +319,7 @@
             
             <img src="https://i.imgur.com/JQl1xWm.jpg" alt="આષાઢી બીજ ઉજવણી" class="celebration-image">
             
-            <div class="divider"></div>
+            <hr class="divider">
             
             <p class="wish-text">
                 અમારી કચ્છી સંસ્કૃતિ અને પરંપરાઓ આપણને સદાય પ્રેરિત કરતી રહે અને આપણે સૌ મળીને સુખ-શાંતિમાં વિકાસ કરીએ. તમારા જીવનમાં સારું આરોગ્ય, શાંતિ અને અસંખ્ય આશીર્વાદો ભરપૂર વર્ષ મળે તેવી શુભેચ્છા.
@@ -292,26 +330,30 @@
             
             <div class="music-section">
                 <div class="music-player">
-                    <h3>કચ્છી લોકગીત</h3>
+                    <h3 class="music-title">કચ્છી લોકગીત</h3>
                     <audio controls style="width: 100%; margin-top: 1rem;">
                         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
                         તમારું બ્રાઉઝર ઑડિયો સપોર્ટ કરતું નથી.
                     </audio>
-                    <p style="margin-top: 1rem; color: #666;">કચ્છી નવા વર્ષની ઉજવણીનો આનંદ લો!</p>
+                    <p style="margin-top: 1.5rem; color: #666;">કચ્છી નવા વર્ષની ઉજવણીનો આનંદ લો!</p>
                 </div>
             </div>
         </div>
         
-        <div class="profile">
-            <img src="https://via.placeholder.com/120/333333/ffffff?text=JD" alt="જય ઢોળી" class="profile-image">
-            <div class="profile-info">
-                <h3 class="profile-name">જય ઢોળી</h3>
-                <p class="profile-title">સર્ટિફાઇડ એનાલિસ્ટ અને ડેટા સાયન્સ પ્રોફેશનલ</p>
-                <p class="profile-description">
-                    "મારા પરિવાર તરફથી તમે અને તમારા પરિવારને આષાઢી બીજની હાર્દિક શુભકામનાઓ. નવા વર્ષમાં સુખ, સમૃદ્ધિ અને સ્વાસ્થ્ય મળે એવી ભગવાન સમક્ષ પ્રાર્થના."
-                    <br><br>
-                    <em>"Mārā parivāra taraphathī tamē anē tamārā parivāranē Aashaḍhī Bījnī hārdika śubhakāmnāo. Navā varṣamāṁ sukha, samr̥d'dhi anē svāsthya maḷē ēvī Bhagavān samakṣa prārthanā."</em>
-                </p>
+        <!-- Jay Dholi Profile Section -->
+        <div class="profile-section">
+            <div class="profile-content">
+                <img src="https://via.placeholder.com/180/333333/ffffff?text=JD" alt="જય ઢોળી" class="profile-image">
+                <div class="profile-info">
+                    <h3 class="profile-name">જય ઢોળી</h3>
+                    <p class="profile-title">સર્ટિફાઇડ એનાલિસ્ટ અને ડેટા સાયન્સ પ્રોફેશનલ</p>
+                    <p class="profile-description">
+                        મારા પરિવાર તરફથી તમે અને તમારા પરિવારને આષાઢી બીજની હાર્દિક શુભકામનાઓ. નવા વર્ષમાં સુખ, સમૃદ્ધિ અને સ્વાસ્થ્ય મળે એવી ભગવાન સમક્ષ પ્રાર્થના.
+                    </p>
+                    <p class="profile-quote">
+                        "Mārā parivāra taraphathī tamē anē tamārā parivāranē Aashaḍhī Bījnī hārdika śubhakāmnāo. Navā varṣamāṁ sukha, samr̥d'dhi anē svāsthya maḷē ēvī Bhagavān samakṣa prārthanā."
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -324,21 +366,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year in footer
             document.getElementById('year').textContent = new Date().getFullYear();
-            
-            // Simple typewriter effect for the main heading
-            const title = document.querySelector('h1');
-            const originalText = title.textContent;
-            title.textContent = '';
-            
-            let i = 0;
-            const typeWriter = setInterval(() => {
-                if (i < originalText.length) {
-                    title.textContent += originalText.charAt(i);
-                    i++;
-                } else {
-                    clearInterval(typeWriter);
-                }
-            }, 150);
         });
     </script>
 </body>
